@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Zyntra
 
-## Getting Started
+Zyntra is an innovative open-source **3D learning platform** designed for **developers, designers, and enthusiasts** to **create, share, and explore immersive 3D content**. Whether you're building your own **Metaverse**, a virtual environment, or simply experimenting with 3D tools, **Zyntra** provides everything you need to bring your virtual ideas to life.
 
-First, run the development server:
+![Zyntra Banner](https://your-image-link-if-any.png)
+
+---
+
+## 🚀 What is Zyntra?
+
+Zyntra is a collaborative space that empowers users to:
+- Build and customize their own **3D platforms or Metaverse spaces**
+- Share and explore 3D models, assets, and environments
+- Collaborate with others in real-time virtual spaces
+- Learn and develop 3D skills through open community content
+
+---
+
+## 🎯 Key Features
+
+- 🔧 **3D Builder Interface** – Create, drag, drop, and animate objects in real-time.
+- 🌍 **Metaverse Ready** – Launch your own interconnected 3D world.
+- 📦 **Asset Marketplace** – Upload and download free 3D assets from the community.
+- 🧑‍🤝‍🧑 **Collaborative Editing** – Work on shared spaces with real-time changes.
+- 🎓 **Learning Hub** – Access tutorials, walkthroughs, and developer docs.
+- 🔗 **API Integration** – Extend your world with external data or services.
+
+---
+
+## 🛠️ Tech Stack
+
+- `Three.js` / `Babylon.js` – for 3D rendering
+- `Next.js` – Framework use to develope this website 
+- `WebSockets / WebRTC` – for real-time communication
+- `MongoDB` – for user and asset data
+
+---
+
+## 📸 Screenshots
+
+*(Add your platform screenshots here)*
+
+---
+
+## 📚 Getting Started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Clone the repo
+git clone https://github.com/your-username/zyntra.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Install dependencies
+cd zyntra
+npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Start the development server
+npm start
