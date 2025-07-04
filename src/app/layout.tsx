@@ -1,8 +1,9 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "./style.css";
-import Navigationbar from "../components/Navigationbar";
+import ClientLayout from "@/components/ClientLayout"; // 👈 imported client-only wrapper
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navigationbar/>
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
