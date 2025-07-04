@@ -17,7 +17,7 @@ const Navigationbar = () => {
   return (
     <>
       {/* Top Navbar */}
-      <nav className="flex items-center justify-center pt-4 pb-4 pl-3 pr-3 h-14 w-full relative z-50">
+      <nav className="flex items-center justify-center pt-4 pb-4 pl-3 pr-3 h-14 w-full fixed z-100">
         
         {/* Hamburger Menu */}
         <div
