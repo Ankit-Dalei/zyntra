@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import About from "./about/page";
 import Contact from "./contact/page";
 import Service from "./service/page";
@@ -8,13 +9,14 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <header className="relative h-[100vh] w-full overflow-hidden bg-gradient-to-br from-[#0e0c28] via-[#1e1f36] to-[#3f3e99] text-white grids cols-2">
+      <header className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#0e0c28] via-[#1e1f36] to-[#3f3e99] text-white flex flex-col lg:flex-row items-center justify-center">
+        
         {/* Glowing circles */}
         <div className="absolute w-80 h-80 bg-pink-500 rounded-full blur-3xl opacity-30 top-10 left-10 animate-pulse" />
         <div className="absolute w-80 h-80 bg-blue-600 rounded-full blur-3xl opacity-20 bottom-10 right-10 animate-ping" />
         
-        {/* Centered Content */}
-        <div className="z-10 text-center px-6 mt-[9vh] flex flex-col items-center justify-center">
+        {/* Text Content */}
+        <div className="z-10 text-center px-6 w-full lg:w-1/2 flex flex-col items-center justify-center h-[100vh]">
           <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
             Welcome to ZYNTRA
           </h1>
@@ -25,21 +27,33 @@ const Home = () => {
             Get Started
           </button>
         </div>
-        <div className="mt-[9vh] flex flex-col items-center justify-center">
-dvscdas
+
+        {/* Image Section */}
+        <div className="z-10 w-full hidden lg:w-1/2 lg:flex justify-center items-end">
+          <Image
+            src="/home.png"
+            alt="Zyntra VR Robot"
+            width={300}
+            height={300}
+            className="object-contain"
+          />
         </div>
       </header>
 
       {/* About Section */}
-        <div id="#about">
-          <About />
-        </div>
-        <div id="#service">
-          <Service/>
-        </div>
-        <div id="#contact">
-          <Contact/>
-        </div>
+      <section id="about">
+        <About />
+      </section>
+
+      {/* Services Section */}
+      <section id="service">
+        <Service />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact">
+        <Contact />
+      </section>
     </>
   );
 };
