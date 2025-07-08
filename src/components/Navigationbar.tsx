@@ -57,9 +57,9 @@ const Navigationbar = () => {
         </div>
         <div className="logo w-[60%] text-4xl lg:text-3xl lg:w-[8%] h-full flex flex-wrap justify-start items-center">ZYNTRA</div>
       </div>
-      <div className="w-[95%] h-auto flex flex-col items-start justify-center gap-4">
+      <div className="w-[95%] h-auto flex flex-col items-start justify-center gap-6">
         {navItems.map(({label,href})=>(
-          <div key={href} onClick={() => setMobileNav(prev => !prev)} className="text-2xl">
+          <div key={href} onClick={() => setMobileNav(prev => !prev)} className="text-5xl hover:bg-gray-400">
             <Link href={href}>{label}</Link>
           </div>
         ))}
