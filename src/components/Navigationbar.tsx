@@ -59,7 +59,7 @@ const Navigationbar = () => {
       </div>
       <div className="w-[95%] h-auto flex flex-col items-start justify-center gap-4">
         {navItems.map(({label,href})=>(
-          <div key={href} onClick={()=>{mobileNav?setMobileNav(false):setMobileNav(true)}} className="text-2xl">
+          <div key={href} onClick={() => setMobileNav(prev => !prev)} className="text-2xl">
             <Link href={href}>{label}</Link>
           </div>
         ))}
