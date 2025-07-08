@@ -20,8 +20,8 @@ const Home = () => {
     </div>
     <div className=" w-full h-auto pt-4 pb-4 flex justify-center items-center ">
       <div className=" w-[92%] flex flex-wrap justify-center items-start mt-4 ">
-        <div className=" lg:w-[50%] lg:text-5xl ">Unlock Your Creative Potential with Our Cutting-Edge Development Features</div>
-        <div className=" lg:w-[50%] lg:text-sm ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam assumenda omnis molestiae ab consequatur magni harum ad neque dolorum consectetur, eos quidem quas sequi vel velit suscipit architecto quis illum nobis maiores excepturi nemo mollitia! Tempora rem incidunt adipisci beatae explicabo dolores! Optio aspernatur at cumque recusandae ducimus. Laboriosam, perferendis, nulla maxime voluptates iure tempore minus Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque enim sed sapiente qui laudantium dolor deleniti deserunt, dolores ad consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur doloremque est totam repellat animi ipsam distinctio magni quidem nihil.
+        <div className=" lg:w-[50%] sm:text-5xl text-4xl ">Unlock Your Creative Potential with Our Cutting-Edge Development Features</div>
+        <div className=" lg:w-[50%] sm:text-sm text-[13px] text-wrap lg:mt-0 mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam assumenda omnis molestiae ab consequatur magni harum ad neque dolorum consectetur, eos quidem quas sequi vel velit suscipit architecto quis illum nobis maiores excepturi nemo mollitia! Tempora rem incidunt adipisci beatae explicabo dolores! Optio aspernatur at cumque recusandae ducimus. Laboriosam, perferendis, nulla maxime voluptates iure tempore minus Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque enim sed sapiente qui laudantium dolor deleniti deserunt, dolores ad consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur doloremque est totam repellat animi ipsam distinctio magni quidem nihil.
         </div>
       </div>
     </div>
