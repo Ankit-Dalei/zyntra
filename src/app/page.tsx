@@ -3,6 +3,7 @@
 const Home = () => {
   return (
     <>
+    
     <div className=" w-full h-auto pt-4 pb-4 flex justify-center items-center ">
       <div className=" w-[92%] flex flex-col flex-wrap justify-center items-start">
         <p className=" text-3xl sm:text-4xl  lg:text-7xl md:w-[60%] lg:w-[70%] ">Unleash Your Creativity: Build Games and 3D Assests Like Never Before!</p>
