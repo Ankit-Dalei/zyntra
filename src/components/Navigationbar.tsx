@@ -1,97 +1,71 @@
 'use client'
-import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import NavLinks from './NavLink';
-import Link from "next/link";
 
-const navItems = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT", href: "/about" },
-  { label: "SERVICES", href: "/services" },
-  { label: "CONTACT", href: "/contact" },
-];
+import Link from "next/link";
+import { useState } from "react";
 
 const Navigationbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+  const[mobileNav,setMobileNav]=useState(false);
+  const navItems = [
+  { label: "HOME", href: "/" },
+  { label: "ABOUT", href: "about" },
+  { label: "SERVICES", href: "service" },
+  { label: "CONTACT", href: "contact" },
+  ];
+ 
   return (
     <>
-    {/* <div className='pt-4 pb-4 pl-3 pr-3 h-14 w-full bg-transparent'></div> */}
-      {/* Top Navbar */}
-      <nav className="flex items-center justify-center pt-4 pb-4 pl-3 pr-3 h-14 w-full fixed z-100">
-        
-        {/* Hamburger Menu */}
-        <div
-          className="lg:hidden flex flex-col gap-1 w-[20%] cursor-pointer"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <div className="w-[20px] h-[3px] bg-white rounded-2xl transition-all duration-300"></div>
-          <div className="w-[20px] h-[3px] bg-white rounded-2xl transition-all duration-300"></div>
-          <div className="w-[20px] h-[3px] bg-white rounded-2xl transition-all duration-300"></div>
-        </div>
-
-        {/* Center NavLinks */}
-        <NavLinks />
-
-
-        {/* Logo */}
-        <p className="w-[59%] lg:w-[35%] flex items-center lg:justify-start justify-center text-2xl font-extrabold bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 text-transparent bg-clip-text select-none">
-          Zyntra
-        </p>
-
-
-        {/* Login Button */}
-        <div className="w-[20%] lg:w-[20%] end">
-          <Button className="rounded-full border px-6 py-2 w-full lg:w-[135px] bg-gradient-to-r from-orange-500 to-pink-500 text-white hover:from-pink-500 hover:to-orange-500 transition-all duration-700 ease-in-out cursor-pointer">
-            Login
-          </Button>
-        </div>
-      </nav>
-
-      {/* Mobile Sidebar */}
-      {isOpen && (
-        <div
-          className="fixed top-0 left-0 h-full w-[75%] bg-white z-40 shadow-lg p-6 lg:hidden"
-          style={{
-            animation: 'slideIn 0.4s ease-in-out forwards',
-          }}
-        >
-            <div
-            className="lg:hidden flex flex-col gap-1 w-[20%] cursor-pointer"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <div className="w-[20px] h-[3px] bg-black rounded-2xl transition-all duration-300"></div>
-            <div className="w-[20px] h-[3px] bg-black rounded-2xl transition-all duration-300"></div>
-            <div className="w-[20px] h-[3px] bg-black rounded-2xl transition-all duration-300"></div>
+    {/* navigation panal */}
+    <nav className="w-full h-[90px] flex justify-center items-center flex-wrap relative" aria-label="Main Navigation">
+      <div className="w-[95%] h-full flex justify-center items-center gap-3">
+        {/* for mobile navigation */}
+        <div className="bars_menu lg:hidden flex flex-col justify-center items-center gap-1 h-full w-auto">
+          <div className="flex flex-col justify-center items-center gap-1" onClick={() => setMobileNav(prev => !prev)}>
+            <div className="bar bg-gray-900 h-[3px] w-[25px] rounded-md"></div>
+            <div className="bar bg-gray-900 h-[3px] w-[25px] rounded-md"></div>
+            <div className="bar bg-gray-900 h-[3px] w-[25px] rounded-md"></div>
           </div>
-          <div className="flex flex-col gap-6 mt-14">
-            {navItems.map(({ label, href }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setIsOpen(false)}
-                className="text-lg font-semibold hover:text-orange-500 transition"
-              >
-                {label}
-              </Link>
+        </div>
+        {/* name or logo of website */}
+        <div className="logo w-[76%] sm:w-[80%] md:w-[84%] text-4xl lg:text-3xl lg:w-auto h-full flex flex-wrap justify-start items-center">ZYNTRA</div>
+        {/* main routing panal */}
+        <div className="navigation lg:w-[89%] w-auto h-full flex items-center justify-center flex-wrap">
+          {/* for 1024px width device navigation panal */}
+          <div className="hidden navigation_main_links lg:flex items-center justify-start flex-wrap w-[70%] h-full gap-10 text-sm">
+            {navItems.map(({label,href})=>(
+              <div key={href}>
+                <Link href={href}>{label}</Link>
+              </div>
             ))}
           </div>
+          {/* login or signup routes */}
+          <div className="navigation_side_links w-auto lg:w-[30%] h-full flex justify-end items-center gap-1 lg:gap-3">
+            <button><Link href={''} className="border-2 border-gray-500 pl-4 pr-4 pt-1 pb-1">Join</Link></button>
+            <button><Link href={''} className="hidden lg:block border-2 border-gray-900 pl-4 pr-4 pt-1 pb-1 bg-gray-900 text-white">Start</Link></button>
+          </div>
         </div>
-      )}
-
-      {/* Inline CSS keyframes */}
-      <style jsx>{`
-        @keyframes slideIn {
-          0% {
-            transform: translateX(-100%);
-            z-index:100;
-          }
-          100% {
-            transform: translateX(0);
-            z-index:100;
-          }
-        }
-      `}</style>
+      </div>
+    </nav>
+    {mobileNav?<>
+    <div className="absolute top-0 left-0 h-screen w-[80%] bg-gray-50 flex flex-col justify-start items-center">
+      <div className="w-[95%] h-[90px] flex justify-start items-center gap-3">
+        <div className="bars_menu lg:hidden flex flex-col justify-center items-center gap-1 h-full w-auto">
+          <div className="flex flex-col justify-center items-center gap-1" onClick={() => setMobileNav(prev => !prev)}>
+            <div className="bar bg-gray-900 h-[3px] w-[25px] rounded-md"></div>
+            <div className="bar bg-gray-900 h-[3px] w-[25px] rounded-md"></div>
+            <div className="bar bg-gray-900 h-[3px] w-[25px] rounded-md"></div>
+          </div>
+        </div>
+        <div className="logo w-[60%] text-4xl lg:text-3xl lg:w-[8%] h-full flex flex-wrap justify-start items-center">ZYNTRA</div>
+      </div>
+      <div className="w-[95%] h-auto flex flex-col items-start justify-center gap-4">
+        {navItems.map(({label,href})=>(
+          <div key={href} onClick={()=>{mobileNav?setMobileNav(false):setMobileNav(true)}} className="text-2xl">
+            <Link href={href}>{label}</Link>
+          </div>
+        ))}
+      </div>
+    </div>
+    </>:<></>}
     </>
   );
 };

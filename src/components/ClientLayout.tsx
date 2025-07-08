@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import Loader from './Loader';
 import Navigationbar from './Navigationbar';
 import Footer from './pages/Footer';
+import LocomotiveScroll from 'locomotive-scroll';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -16,6 +17,10 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     const timer = setTimeout(() => setLoading(false), 500); // adjust as needed
     return () => clearTimeout(timer);
   }, [pathname]);
+  useEffect(()=>{
+const locomotiveScroll = new LocomotiveScroll();
+
+  },[]);
 
   return (
     <>

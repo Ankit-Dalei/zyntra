@@ -1,59 +1,41 @@
 'use client';
 
-import Image from "next/image";
-import About from "./about/page";
-import Contact from "./contact/page";
-import Service from "./service/page";
-
 const Home = () => {
   return (
     <>
-      {/* Hero Section */}
-      <header className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#0e0c28] via-[#1e1f36] to-[#3f3e99] text-white flex flex-col lg:flex-row items-center justify-center">
-        
-        {/* Glowing circles */}
-        <div className="absolute w-80 h-80 bg-pink-500 rounded-full blur-3xl opacity-30 top-10 left-10 animate-pulse" />
-        <div className="absolute w-80 h-80 bg-blue-600 rounded-full blur-3xl opacity-20 bottom-10 right-10 animate-ping" />
-        
-        {/* Text Content */}
-        <div className="z-10 text-center px-6 w-full lg:w-1/2 flex flex-col items-center justify-center h-[100vh]">
-          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
-            Welcome to ZYNTRA
-          </h1>
-          <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-xl mx-auto">
-            A futuristic 3D learning and creative collaboration platform.
-          </p>
-          <button className="mt-6 px-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full text-white font-semibold shadow-md hover:scale-105 transition-transform duration-300">
-            Get Started
-          </button>
+    <div className=" w-full h-auto pt-4 pb-4 flex justify-center items-center ">
+      <div className=" w-[92%] flex flex-col flex-wrap justify-center items-start">
+        <p className=" text-3xl sm:text-4xl  lg:text-7xl md:w-[60%] lg:w-[70%] ">Unleash Your Creativity: Build Games and 3D Assests Like Never Before!</p>
+        <p className="text-sm text-gray-400 mt-5">Join our innovation platform to transform your ideas into stunning 3D experiances and games.</p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <button className="border-2 border-gray-700 pt-2 pb-2 pl-5 pr-5 bg-gray-900 text-white">Sign Up</button>
+          <button className="border-2 border-gray-900 pt-2 pb-2 pl-5 pr-5">Learn More</button>
         </div>
-
-        {/* Image Section */}
-        <div className="z-10 w-full hidden lg:w-1/2 lg:flex justify-center items-end">
-          <Image
-            src="/home.png"
-            alt="Zyntra VR Robot"
-            width={300}
-            height={300}
-            className="object-contain"
-          />
+      </div>
+    </div>
+    <div className=" w-full h-auto pt-4 pb-4 flex justify-center items-center mt-4 ">
+      <div className=" w-[92%] bg-gray-300 h-[200px] md:h-[650px] ">
+      </div>
+    </div>
+    <div className=" w-full h-auto pt-4 pb-4 flex justify-center items-center ">
+      <div className=" w-[92%] flex flex-wrap justify-center items-start mt-4 ">
+        <div className=" lg:w-[50%] lg:text-5xl ">Unlock Your Creative Potential with Our Cutting-Edge Development Features</div>
+        <div className=" lg:w-[50%] lg:text-sm ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam assumenda omnis molestiae ab consequatur magni harum ad neque dolorum consectetur, eos quidem quas sequi vel velit suscipit architecto quis illum nobis maiores excepturi nemo mollitia! Tempora rem incidunt adipisci beatae explicabo dolores! Optio aspernatur at cumque recusandae ducimus. Laboriosam, perferendis, nulla maxime voluptates iure tempore minus Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque enim sed sapiente qui laudantium dolor deleniti deserunt, dolores ad consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur doloremque est totam repellat animi ipsam distinctio magni quidem nihil.
         </div>
-      </header>
-
-      {/* About Section */}
-      <section id="about">
-        <About />
-      </section>
-
-      {/* Services Section */}
-      <section id="service">
-        <Service />
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact">
-        <Contact />
-      </section>
+      </div>
+    </div>
+    <div className=" w-full h-auto pt-4 pb-4 flex justify-center items-center ">
+      <div className=" w-[92%] h-[300px]"></div>
+    </div>
+    {/* <div className=" w-full h-auto pt-4 pb-4 bg-amber-400 flex justify-center items-center ">
+      <div className=" w-[92%] bg-amber-950 h-5 "></div>
+    </div> */}
+    {/* <div className=" w-full h-auto pt-4 pb-4 bg-amber-400 flex justify-center items-center ">
+      <div className=" w-[92%] bg-amber-950 h-5 "></div>
+    </div> */}
+    {/* <div className=" w-full h-auto pt-4 pb-4 bg-amber-400 flex justify-center items-center ">
+      <div className=" w-[92%] bg-amber-950 h-5 "></div>
+    </div> */}
     </>
   );
 };
