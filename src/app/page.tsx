@@ -1,6 +1,27 @@
 'use client';
 
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
+
 const Home = () => {
+  const firstani=useRef(null);
+  const videoenter2=useRef(null);
+  // enter1
+  useEffect(()=>{
+    gsap.fromTo(firstani.current, 
+      { x: -200, opacity: 0 }, // FROM
+      { x: 0, opacity: 1, duration: 2 } // TO
+    );
+    gsap.fromTo(videoenter2.current, 
+      { y: 200, opacity: 0 }, // FROM
+      { y: 0, opacity: 1, duration: 2 } // TO
+    );
+  },[])
+
+
+
+
+
   const Docs = [
     {heading:'Seamless integration of Tools for Effortless Game Development and Design', describe:'Experience a streamlined workflow from concept to completion.', butt:'Explore Docs', svg:(<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height={30} width={30}><path d="M0 48C0 21.5 21.5 0 48 0l0 48 0 393.4 130.1-92.9c8.3-6 19.6-6 27.9 0L336 441.4 336 48 48 48 48 0 336 0c26.5 0 48 21.5 48 48l0 440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488L0 48z"/></svg>), svg2:(<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height={15} width={15}><path d="M0 48C0 21.5 21.5 0 48 0l0 48 0 393.4 130.1-92.9c8.3-6 19.6-6 27.9 0L336 441.4 336 48 48 48 48 0 336 0c26.5 0 48 21.5 48 48l0 440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488L0 48z"/></svg>)},
     {heading:'Comprehensive Learning Resources to Enhance Your Development Skills', describe:'Access tutorials, guides, and community support to sharpen your expertise.', butt:'Learn More', svg:(<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height={30} width={30}><path d="M0 48C0 21.5 21.5 0 48 0l0 48 0 393.4 130.1-92.9c8.3-6 19.6-6 27.9 0L336 441.4 336 48 48 48 48 0 336 0c26.5 0 48 21.5 48 48l0 440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488L0 48z"/></svg>), svg2:(<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height={15} width={15}><path d="M0 48C0 21.5 21.5 0 48 0l0 48 0 393.4 130.1-92.9c8.3-6 19.6-6 27.9 0L336 441.4 336 48 48 48 48 0 336 0c26.5 0 48 21.5 48 48l0 440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488L0 48z"/></svg>)},
@@ -8,8 +29,8 @@ const Home = () => {
   ];
   return (
     <>
-    {/*  */}
-    <div className=" w-full h-auto pt-4 pb-4 flex justify-center items-center ">
+    {/* enter1 home 1st animation */}
+    <div ref={firstani} className=" enter1 w-full h-auto pt-4 pb-4 flex justify-center items-center ">
       <div className=" w-[92%] flex flex-col flex-wrap justify-center items-start">
         <p className=" text-3xl sm:text-4xl  lg:text-7xl md:w-[60%] lg:w-[70%] ">Unleash Your Creativity: Build Games and 3D Assests Like Never Before!</p>
         <p className="text-sm text-gray-400 mt-5">Join our innovation platform to transform your ideas into stunning 3D experiances and games.</p>
@@ -20,7 +41,7 @@ const Home = () => {
       </div>
     </div>
     {/* video */}
-    <div className=" w-full h-auto pt-4 pb-4 flex justify-center items-center mt-4 ">
+    <div ref={videoenter2} className=" videoenter2 w-full h-auto pt-4 pb-4 flex justify-center items-center mt-4 ">
       <div className=" w-[92%] bg-gray-300 h-[200px] md:h-[650px] ">
       </div>
     </div>

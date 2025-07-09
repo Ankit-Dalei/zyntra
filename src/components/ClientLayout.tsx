@@ -1,4 +1,3 @@
-// components/ClientLayout.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -17,12 +16,15 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     return () => clearTimeout(timer);
   }, [pathname]);
 
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <>
-      {loading && <Loader />}
       <Navigationbar />
-      {!loading && children}
-      <Footer/>
+      {children}
+      <Footer />
     </>
   );
 }
