@@ -17,7 +17,7 @@ const Navigationbar = () => {
   return (
     <>
     {/* navigation panal */}
-    <nav className=" navigations w-full h-[90px] flex justify-center items-center flex-wrap relative " aria-label="Main Navigation">
+    <nav className=" w-full h-[90px] flex justify-center items-center flex-wrap relative " aria-label="Main Navigation">
       <div className="w-[95%] h-full flex justify-center items-center gap-3">
         {/* for mobile navigation */}
         <div className="bars_menu lg:hidden flex flex-col justify-center items-center gap-1 h-full w-auto">
