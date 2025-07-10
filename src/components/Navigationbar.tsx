@@ -7,11 +7,11 @@ const Navigationbar = () => {
   const[mobileNav,setMobileNav]=useState(false);
   const navItems = [
   { label: "HOME", href: "/" },
-  { label: "ABOUT", href: "about" },
   { label: "SERVICES", href: "service" },
-  { label: "CONTACT", href: "contact" },
   { label: "DOCS", href: "docs" },
   { label: "TOOLS", href: "tools" },
+  { label: "ABOUT", href: "about" },
+  { label: "CONTACT", href: "contact" }
   ];
  
   return (
@@ -34,21 +34,21 @@ const Navigationbar = () => {
           {/* for 1024px width device navigation panal */}
           <div className="hidden navigation_main_links lg:flex items-center justify-start flex-wrap w-[70%] h-full gap-10 text-sm">
             {navItems.map(({label,href})=>(
-              <div key={href}>
+              <div key={href} className="hover:text-gray-300">
                 <Link href={href}>{label}</Link>
               </div>
             ))}
           </div>
           {/* login or signup routes */}
           <div className="navigation_side_links w-auto lg:w-[30%] h-full flex justify-end items-center gap-1 lg:gap-3">
-            <button><Link href={''} className="border-2 border-gray-500 pl-4 pr-4 pt-1 pb-1">Join</Link></button>
-            <button><Link href={''} className="hidden lg:block border-2 border-gray-900 pl-4 pr-4 pt-1 pb-1 bg-gray-900 text-white">Start</Link></button>
+            <button><Link href={''} className="border-2 border-gray-500 pl-4 pr-4 pt-1 pb-1 hover:bg-gray-900 hover:border-gray-900 hover:text-white">Join</Link></button>
+            <button><Link href={''} className="hidden lg:block border-2 border-gray-900 pl-4 pr-4 pt-1 pb-1 bg-gray-900 text-white hover:bg-gray-100 hover:border-gray-500 hover:text-black">Start</Link></button>
           </div>
         </div>
       </div>
     </nav>
     {mobileNav?<>
-    <div className="absolute top-0 left-0 h-screen w-[80%] bg-gray-50 flex flex-col justify-start items-center">
+    <div className="absolute z-10 top-0 left-0 h-screen w-[80%] bg-gray-50 flex flex-col justify-start items-center">
       <div className="w-[95%] h-[90px] flex justify-start items-center gap-3">
         <div className="bars_menu lg:hidden flex flex-col justify-center items-center gap-1 h-full w-auto">
           <div className="flex flex-col justify-center items-center gap-1" onClick={() => setMobileNav(prev => !prev)}>
@@ -61,7 +61,7 @@ const Navigationbar = () => {
       </div>
       <div className="w-[95%] h-auto flex flex-col items-start justify-center gap-6">
         {navItems.map(({label,href})=>(
-          <div key={href} onClick={() => setMobileNav(prev => !prev)} className="text-5xl hover:bg-gray-400">
+          <div key={href} onClick={() => setMobileNav(prev => !prev)} className="text-5xl hover:bg-gray-200">
             <Link href={href}>{label}</Link>
           </div>
         ))}
