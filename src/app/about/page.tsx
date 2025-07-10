@@ -4,28 +4,28 @@ import React from 'react'
 const About = () => {
   return (
     <>
-    <div className=' w-full h-auto mt-9 flex-wrap flex justify-center items-center '>
-      <div className=' w-[92%] h-[300px] lg:h-[600px] bg-gray-200 flex justify-center items-center p-7 text-[90px] lg:text-[190px] '>
+    <div className=' w-full h-auto mt-0 lg:mt-4 flex-wrap flex justify-center items-center '>
+      <div className=' w-[92%] h-auto sm:h-[600px] bg-gray-200 flex justify-center items-center p-7 text-[90px] lg:text-[190px] '>
         WHO ARE WE
       </div>
     </div>
-    <div className=' w-full h-auto mt-15 flex-wrap flex justify-center items-center '>
-      <div className=' w-[92%] p-8 h-[400px] bg-amber-300 flex justify-between items-center '>
-        <p className=' w-[50%] text-6xl/19 '>We creafting a<span className=' text-gray-400 '>  better</span> platform for<span className=' text-gray-400 '>   developer</span></p>
-        <p className=' w-[30%] h-[90%] text-lg flex justify-center items-end '>Together we build a metaverse platform for next generation. It should be helpfull for personality development, creative thinking also learning new thing etc</p>
+    <div className=' w-full h-auto mt-4 lg:mt-15 flex-wrap flex  justify-center items-center '>
+      <div className=' w-[92%] p-8 h-auto lg:h-[400px] lg:bg-amber-300 flex flex-col lg:flex-row justify-between items-center '>
+        <p className=' w-auto lg:w-[50%] bg-amber-300 p-4 lg:p-0 text-6xl/19 '>We creafting a<span className=' text-gray-400 '>  better</span> platform for<span className=' text-gray-400 '>   developer</span></p>
+        <p className=' lg:w-[30%] h-[90%] text-lg hidden lg:flex justify-center items-end '>Together we build a metaverse platform for next generation. It should be helpfull for personality development, creative thinking also learning new thing etc</p>
       </div>
     </div>
     <div className=' w-full h-auto mt-15 flex-wrap flex justify-center items-center '>
-      <div className=' w-[92%] h-auto flex justify-center items-center gap-4  '>
-        <div className=' h-[500px] w-[30%] bg-gray-400 '></div>
-        <div className=' h-[500px] w-[70%] bg-gray-400 relative '>
+      <div className=' w-[92%] h-auto flex flex-col lg:flex-row justify-center items-center gap-4  '>
+        <div className='  sm:h-[500px] h-[300px] w-full lg:w-[30%] bg-gray-400 '></div>
+        <div className='  sm:h-[500px] h-[300px] w-full lg:w-[70%] bg-gray-400 relative '>
           <div className=' absolute bottom-0 left-0 rignttr '></div>
         </div>
       </div>
     </div>
     <div className=' w-full h-auto mt-15 flex-wrap flex justify-center items-center '>
-      <div className=' w-[92%] h-auto flex justify-center items-center gap-4 '>
-        <div className=' w-[20%] h-[500px] flex justify-start items-start  '>
+      <div className=' w-[92%] h-auto flex flex-col lg:flex-row justify-center items-center gap-4 '>
+        <div className=' w-full lg:w-[20%] h-auto lg:h-[500px] flex justify-center lg:justify-start items-center lg:items-start  '>
           <p className=' text-4xl flex justify-center items-start '>
           Our Story 
           <Image
@@ -33,10 +33,11 @@ const About = () => {
           alt='Arrow'
           width={100}
           height={100}
+          className='hidden lg:flex'
           />
           </p>
         </div>
-        <div className=' w-[80%] h-[500px] bg-amber-800 p-4 '></div>
+        <div className=' w-full lg:w-[80%] h-[500px] bg-amber-800 p-4 '></div>
       </div>
     </div>
     <div className=' w-full h-auto mt-15 flex justify-center items-center '>
