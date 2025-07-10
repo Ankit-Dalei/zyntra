@@ -9,9 +9,9 @@ const About = () => {
         WHO ARE WE
       </div>
     </div>
-    <div className=' w-full h-auto mt-4 lg:mt-15 flex-wrap flex  justify-center items-center '>
-      <div className=' w-[92%] p-8 h-auto lg:h-[400px] lg:bg-amber-300 flex flex-col lg:flex-row justify-between items-center '>
-        <p className=' w-auto lg:w-[50%] bg-amber-300 p-4 lg:p-0 text-6xl/19 '>We creafting a<span className=' text-gray-400 '>  better</span> platform for<span className=' text-gray-400 '>   developer</span></p>
+    <div className=' w-full h-auto mt-4 lg:mt-15 flex-wrap flex justify-center items-center '>
+      <div className=' w-[92%] p-8 h-auto lg:h-[400px] bg-amber-300 flex flex-col lg:flex-row justify-center lg:justify-between items-center '>
+        <p className=' w-full lg:w-[50%] p-4 lg:p-0 text-5xl/19 lg:text-6xl/19 '>We creafting a<span className=' text-gray-400 '>  better</span> platform for<span className=' text-gray-400 '>   developer</span></p>
         <p className=' lg:w-[30%] h-[90%] text-lg hidden lg:flex justify-center items-end '>Together we build a metaverse platform for next generation. It should be helpfull for personality development, creative thinking also learning new thing etc</p>
       </div>
     </div>
