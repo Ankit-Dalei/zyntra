@@ -31,27 +31,33 @@ const Home = () => {
   // enter1
   useEffect(()=>{
     gsap.registerPlugin(ScrollTrigger);
+
     gsap.fromTo(firstani.current, 
-      { x: -200, opacity: 0 }, // FROM
-      { x: 0, opacity: 1, duration: 2 } // TO
+      { x: -200, opacity: 0 },
+      { x: 0, opacity: 1, duration: 2 }
     );
 
     // video enter animation
     gsap.fromTo(videoenter2.current, 
-      { y: 200, opacity: 0 }, // FROM
-      { y: 0, opacity: 1, duration: 2 } // TO
+      { y: 0, opacity: 0 },
+      { y: 0, opacity: 1, duration: 2 }
     );
 
 
-    gsap.fromTo(videoOrigin.current,
-      {scale:0},
-      {
-        scale:1,
-        scrollTrigger:{
-          trigger:videoenter2.current
-        }
-      }
-    )
+    // gsap.to(videoenter2.current, {
+    //   // scale: 3,
+    //   transformOrigin: "center center",
+    //   duration:3,
+    //   position:'fixed',
+    //   scrollTrigger: {
+    //     trigger: videoenter2.current,
+    //     start: "-20% top",
+    //     end: "+=1000",
+    //     scrub: true,
+    //     markers:true,
+    //     anticipatePin: 1 // Helps prevent jumping
+    //   }
+    // });
 
     // text enter animation
     gsap.fromTo(
@@ -234,22 +240,14 @@ const Home = () => {
         </div>
       </div>
     </div>
+
     {/* video */}
-    <div ref={videoenter2} className=" videoenter2 w-full h-auto pt-4 pb-4 flex justify-center items-center mt-4 overflow-hidden ">
-      <div ref={videoOrigin} className=" videostock w-[92%] bg-gray-300 h-[200px] md:h-[650px] ">
-        <video 
-          className="w-full h-full object-cover" 
-          preload="auto" 
-          autoPlay 
-          muted 
-          playsInline
-          loop
-        >
-          <source src="/test.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+    <div ref={videoenter2} className="w-full h-screen flex justify-center items-center overflow-hidden ">
+      <div ref={videoOrigin} className="w-[92%] relative bg-gray-200 h-[300px] md:h-[650px] flex justify-center items-center">
+hello
       </div>
     </div>
+
     {/* texts1 */}
     <div ref={text1} className=" w-full h-auto pt-4 pb-4 flex justify-center items-center overflow-hidden ">
       <div className=" w-[92%] flex flex-wrap justify-center items-start mt-9 ">
@@ -258,6 +256,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+
     {/* docsss */}
     <div ref={maindocsss} className=" w-full h-auto pt-4 pb-4 flex justify-center items-center ">
       <div className=" w-[92%] mt-9 cols-3 grids gap-15">
@@ -271,6 +270,7 @@ const Home = () => {
         ))}
       </div>
     </div>
+
     {/* serv */}
     <div ref={mainserv} className=" w-full h-auto pt-4 pb-4 flex justify-center items-center ">
       <div className=" w-[92%] grids cols-2 gap-3 lg:gap-20 mt-9 ">
@@ -286,6 +286,7 @@ const Home = () => {
         <div ref={serv2} className="bg-gray-400 h-[650px] w-full"></div>
       </div>
     </div>
+
     {/*  */}
     <div ref={mainserv2} className=" w-full h-auto pt-4 pb-4 flex justify-center items-center mt-13 ">
       <div className=" w-[92%] grids cols-2 gap-20  ">
@@ -301,9 +302,12 @@ const Home = () => {
         </div>
       </div>
     </div>
+
+    {/*  */}
     {/* <div className=" w-full h-auto pt-4 pb-4 bg-amber-400 flex justify-center items-center ">
       <div className=" w-[92%] bg-amber-950 h-5 "></div>
     </div> */}
+
     {/*  */}
     <div ref={mainlast} className=" w-full h-auto pt-4 pb-4 flex justify-center items-center mt-9 ">
       <div ref={mainlast1} className=" w-[92%] bg-gray-200 lg:h-[300px] p-10 lg:p-20 ">
