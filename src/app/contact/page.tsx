@@ -12,7 +12,7 @@ const Contact = () => {
 
   gsap.fromTo(focon.current, 
       { y: 0, opacity: 0 },
-      { y: 0, opacity: 1, duration: 5 }
+      { y: 0, opacity: 1, duration: 3 }
     );
 
 
