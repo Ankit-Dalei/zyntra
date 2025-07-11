@@ -242,8 +242,8 @@ const Home = () => {
     </div>
 
     {/* video */}
-    <div ref={videoenter2} className="w-full h-screen flex justify-center items-center overflow-hidden ">
-      <div ref={videoOrigin} className="w-[92%] relative bg-gray-200 h-[200px] md:h-[650px] flex justify-center items-center">
+    <div ref={videoenter2} className="w-full h-auto flex justify-center items-center overflow-hidden ">
+      <div ref={videoOrigin} className="w-[92%] relative bg-gray-200 h-[300px] md:h-[650px] flex justify-center items-center">
 hello
       </div>
     </div>
