@@ -42,6 +42,17 @@ const Home = () => {
       { y: 0, opacity: 1, duration: 2 } // TO
     );
 
+
+    gsap.fromTo(videoOrigin.current,
+      {scale:0},
+      {
+        scale:1,
+        scrollTrigger:{
+          trigger:videoenter2.current
+        }
+      }
+    )
+
     // text enter animation
     gsap.fromTo(
     text11.current,
@@ -224,10 +235,9 @@ const Home = () => {
       </div>
     </div>
     {/* video */}
-    <div ref={videoenter2} className=" videoenter2 w-full h-auto pt-4 pb-4 flex justify-center items-center mt-4 ">
-      <div className=" videostock w-[92%] bg-gray-300 h-[200px] md:h-[650px] ">
+    <div ref={videoenter2} className=" videoenter2 w-full h-auto pt-4 pb-4 flex justify-center items-center mt-4 overflow-hidden ">
+      <div ref={videoOrigin} className=" videostock w-[92%] bg-gray-300 h-[200px] md:h-[650px] ">
         <video 
-        ref={videoOrigin}
           className="w-full h-full object-cover" 
           preload="auto" 
           autoPlay 

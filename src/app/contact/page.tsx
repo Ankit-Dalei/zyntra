@@ -19,7 +19,7 @@ const Contact = () => {
             <input type="number" name="Contact" id="Contact" className=" border border-gray-300 h-[90%] w-full rounded-md  " />
           </div>
           <div className=" w-full h-[90px] flex flex-col items-start justify-center gap-2 ">
-            <label htmlFor="Service" className=" text-xl ">Services you're looking for?</label>
+            <label htmlFor="Service" className=" text-xl ">{`Services you're looking for?`}</label>
             <input type="text" name="Service" id="Service" className=" border border-gray-300 h-[90%] w-full rounded-md " />
           </div>
         </div>
