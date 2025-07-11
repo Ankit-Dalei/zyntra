@@ -49,7 +49,16 @@ const About = () => {
       </div>
     </div>
     {/* <div className=' w-full h-auto mt-5 flex justify-center items-center '>
-      <div className=' w-[92%] h-[500px] bg-amber-300 '></div>
+      <div className=' w-[92%] h-[500px] bg-amber-300 flex flex-col justify-center items-center '>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div> */}
     {/* <div className=' w-full h-auto mt-5 flex justify-center items-center '>
       <div className=' w-[92%] h-[500px] bg-amber-300 '></div>
