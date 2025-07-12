@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import Loader from './Loader';
-import Navigationbar from './Navigationbar';
+import Loader from './loaders/Loader';
+import Navigationbar from './pages/Navigationbar';
 import Footer from './pages/Footer';
+import Login from '@/app/(LoginSystem)/login/page';
+import Signup from '@/app/(LoginSystem)/signup/page';
+import Reset from '@/app/(LoginSystem)/passReset/page';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -18,6 +21,33 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   if (loading) {
     return <Loader />;
+  }
+
+  if (pathname=='/login') {
+    return (
+      <>
+        <Navigationbar />
+        <Login />
+      </>
+    );
+  }
+
+  if (pathname=='/signup') {
+    return (
+      <>
+        <Navigationbar />
+        <Signup />
+      </>
+    );
+  }
+  
+  if (pathname=='/passreset') {
+    return (
+      <>
+        {/* <Navigationbar /> */}
+        <Reset />
+      </>
+    );
   }
 
   return (

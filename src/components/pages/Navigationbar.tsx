@@ -41,8 +41,8 @@ const Navigationbar = () => {
           </div>
           {/* login or signup routes */}
           <div className="navigation_side_links w-auto lg:w-[30%] h-full flex justify-end items-center gap-1 lg:gap-3">
-            <button><Link href={''} className="border-2 border-gray-500 pl-4 pr-4 pt-1 pb-1 hover:bg-gray-900 hover:border-gray-900 hover:text-white">Join</Link></button>
-            <button><Link href={''} className="hidden lg:block border-2 border-gray-900 pl-4 pr-4 pt-1 pb-1 bg-gray-900 text-white hover:bg-gray-100 hover:border-gray-500 hover:text-black">Start</Link></button>
+            <button><Link href={'login'} className="border-2 border-gray-500 pl-4 pr-4 pt-1 pb-1 hover:bg-gray-900 hover:border-gray-900 hover:text-white">Join</Link></button>
+            <button><Link href={'signup'} className="hidden lg:block border-2 border-gray-900 pl-4 pr-4 pt-1 pb-1 bg-gray-900 text-white hover:bg-gray-100 hover:border-gray-500 hover:text-black">Start</Link></button>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ const Navigationbar = () => {
       </div>
       <div className="w-[95%] h-auto flex flex-col items-start justify-center gap-6">
         {navItems.map(({label,href})=>(
-          <div key={href} onClick={() => setMobileNav(prev => !prev)} className="text-5xl hover:bg-gray-200">
+          <div key={href} onClick={() => setMobileNav(prev => !prev)} className="text-5xl hover:bg-gray-500">
             <Link href={href}>{label}</Link>
           </div>
         ))}

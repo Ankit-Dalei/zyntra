@@ -2,7 +2,9 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
+
 const Home = () => {
   const firstani=useRef(null);
 
@@ -235,8 +237,8 @@ const Home = () => {
         <p className=" text-3xl sm:text-4xl  lg:text-7xl md:w-[60%] lg:w-[70%] ">Unleash Your Creativity: Build Games and 3D Assests Like Never Before!</p>
         <p className="text-sm text-gray-400 mt-5">Join our innovation platform to transform your ideas into stunning 3D experiances and games.</p>
         <div className="mt-4 flex flex-wrap gap-3">
-          <button className="border-2 border-gray-700 pt-2 pb-2 pl-5 pr-5 bg-gray-900 text-white">Sign Up</button>
-          <button className="border-2 border-gray-900 pt-2 pb-2 pl-5 pr-5">Learn More</button>
+          <button className="border-2 border-gray-700 pt-2 pb-2 pl-5 pr-5 bg-gray-900 text-white hover:bg-purple-50 hover:text-black "><Link href={'signup'}>Sign Up</Link></button>
+          <button className="border-2 border-gray-900 pt-2 pb-2 pl-5 pr-5 hover:bg-purple-400 hover:text-white"><Link href={'about'}>Learn More</Link></button>
         </div>
       </div>
     </div>
