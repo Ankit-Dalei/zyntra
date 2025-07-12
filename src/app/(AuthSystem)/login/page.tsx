@@ -1,58 +1,55 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
-const Signup = () => {
+const Login = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Validation or API call
+    if (!email || !password) {
+      alert('Please fill all fields')
+      return
+    }
+    // Replace with real login API
+    alert(`Login attempted with:\nEmail: ${email}\nPassword: ${password}`)
+  }
+
   return (
-    <>
     <div className="flex h-screen w-full bg-gradient-to-r from-black to-gray-900">
       {/* Left Side - Image */}
-      <div className="w-1/2 hidden items-center justify-center md:flex">
+      <div className="lg:w-1/2 hidden items-center justify-center lg:flex">
         {/* <img src={robotImg} alt="Futuristic Robot" className="h-4/5 object-contain" /> */}
       </div>
 
       {/* Right Side - Login Form */}
-      <form className="w-full lg:w-1/2 flex flex-col justify-center items-center px-10">
-        <h2 className="text-2xl font-bold text-gray-100 mb-1">Kick start</h2>
-        <h3 className="text-xl text-gray-400 mb-1">Your</h3>
-        <h3 className="text-xl text-gray-600 mb-8">Development Journey</h3>
+      <form onSubmit={handleLogin} className="w-full lg:w-1/2 flex flex-col justify-center items-center px-10">
+        <h2 className="text-2xl font-bold text-gray-100 mb-1">Hello!</h2>
+        <h3 className="text-xl text-gray-400 mb-8">Welcome Back</h3>
 
-        <div className=' flex justify-center items-center gap-4 '>
-          <input
-            type="text"
-            placeholder="FIRSTNAME"
-            className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded"
-          />
-          <input
-            type="test"
-            placeholder="LASTNAME"
-            className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded"
-          />
-        </div>
         <input
           type="email"
           placeholder="Enter Email"
-          className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
         />
-        <div className=' flex justify-center items-center gap-4 '>
-          <input
-            type="password"
-            placeholder="********"
-            className="w-full max-w-md mb-4 px-4 text-gray-100 py-2 border border-gray-300 rounded"
-          />
-          <input
-            type="password"
-            placeholder="********"
-            className="w-full max-w-md mb-4 px-4 text-gray-100 py-2 border border-gray-300 rounded"
-          />
-        </div>
         <input
-          type="test"
-          placeholder="LASTNAME"
-          className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded"
+          type="password"
+          placeholder="********"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full max-w-md mb-1 px-4 text-gray-100 py-2 border border-gray-300 rounded bg-transparent"
         />
-        <button className="w-full max-w-md bg-black text-white py-2 rounded mb-4">
-          Sign up
+
+        <p className="w-full max-w-md mb-4 px-4 py-2 text-white text-right">
+          <Link href="/reset">Forget Password?</Link>
+        </p>
+
+        <button type="submit" className="w-full max-w-md bg-black hover:bg-gray-400 hover:text-black text-white py-2 rounded mb-4">
+          Sign in
         </button>
 
         <p className="text-gray-300 text-sm mb-4">Or continue with</p>
@@ -79,13 +76,12 @@ const Signup = () => {
         </div>
 
         <p className="text-sm text-gray-200">
-          {`Already have an account?`}{" "}
-          <span className="text-gray-400 font-semibold cursor-pointer"><Link href={'login'}>LogIn</Link></span>
+          {`Don’t have an account?`}{" "}
+          <Link href="/signup" className="text-gray-400 font-semibold">Create Account!</Link>
         </p>
       </form>
     </div>
-    </>
   )
 }
 
-export default Signup
+export default Login

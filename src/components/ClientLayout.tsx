@@ -5,9 +5,9 @@ import { usePathname } from 'next/navigation';
 import Loader from './loaders/Loader';
 import Navigationbar from './pages/Navigationbar';
 import Footer from './pages/Footer';
-import Login from '@/app/(LoginSystem)/login/page';
-import Signup from '@/app/(LoginSystem)/signup/page';
-import Reset from '@/app/(LoginSystem)/passReset/page';
+import Login from '@/app/(AuthSystem)/login/page';
+import Signup from '@/app/(AuthSystem)/signup/page';
+import Reset from '@/app/(AuthSystem)/passReset/page';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -41,10 +41,10 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     );
   }
   
-  if (pathname=='/passreset') {
+  if (pathname=='/passReset') {
     return (
       <>
-        {/* <Navigationbar /> */}
+        <Navigationbar />
         <Reset />
       </>
     );

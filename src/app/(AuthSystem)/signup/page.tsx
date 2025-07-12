@@ -1,34 +1,101 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
-const Login = () => {
+const Signup = () => {
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [dob, setDob] = useState('')
+
+  const handleSignup = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!firstName || !lastName || !email || !password || !confirmPassword) {
+      alert('Please fill in all fields')
+      return
+    }
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match')
+      return
+    }
+
+    if (!dob) {
+  alert('Please select your Date of Birth')
+  return
+}
+
+    // Proceed with signup logic (API call)
+    alert(`Signup successful!\nName: ${firstName} ${lastName}\nEmail: ${email}`)
+  }
+
   return (
-    <>
-    <div className="flex h-screen w-full bg-gradient-to-r from-black to-gray-900">
+    <div className="flex flex-row-reverse h-screen w-full bg-gradient-to-r from-black to-gray-900">
       {/* Left Side - Image */}
-      <div className="w-1/2 hidden items-center justify-center md:flex">
+      <div className="w-1/2 hidden items-center justify-center lg:flex">
         {/* <img src={robotImg} alt="Futuristic Robot" className="h-4/5 object-contain" /> */}
       </div>
 
-      {/* Right Side - Login Form */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-10">
-        <h2 className="text-2xl font-bold text-gray-100 mb-1">Hello !</h2>
-        <h3 className="text-xl text-gray-400 mb-8">Welcome Back</h3>
+      {/* Right Side - Signup Form */}
+      <form onSubmit={handleSignup} className="w-full lg:w-1/2 flex flex-col justify-center items-center px-10">
+        <h2 className="text-2xl font-bold text-gray-100 mb-1">Kick start</h2>
+        <h3 className="text-xl text-gray-400 mb-1">Your</h3>
+        <h3 className="text-xl text-gray-600 mb-8">Development Journey</h3>
+
+        <div className="flex md:flex-row flex-col justify-center items-center gap-4 w-full max-w-md mb-4">
+          <input
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            className="w-full md:w-1/2 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            className="w-full md:w-1/2 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
+          />
+        </div>
 
         <input
           type="email"
           placeholder="Enter Email"
-          className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
         />
+
+        <div className="flex md:flex-row flex-col justify-center items-center gap-4 w-full max-w-md mb-4">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full md:w-1/2 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            className="w-full md:w-1/2 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
+          />
+        </div>
         <input
-          type="password"
-          placeholder="********"
-          className="w-full max-w-md mb-1 px-4 text-gray-100 py-2 border border-gray-300 rounded"
+          type="date"
+          placeholder="Date of Birth"
+          value={dob}
+          onChange={(e) => setDob(e.target.value)}
+          className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
         />
-        <p className=' w-[75%] mb-4 text-white text-right '><Link href={'passReset'}>Forget Password?</Link></p>
-        <button className="w-full max-w-md bg-black text-white py-2 rounded mb-4">
-          Sign in
+
+        <button type="submit" className="w-full max-w-md bg-black hover:bg-gray-400 hover:text-black text-white py-2 rounded mb-4">
+          Sign up
         </button>
 
         <p className="text-gray-300 text-sm mb-4">Or continue with</p>
@@ -55,13 +122,12 @@ const Login = () => {
         </div>
 
         <p className="text-sm text-gray-200">
-          Don’t Have an account?{" "}
-          <span className="text-gray-400 font-semibold cursor-pointer"><Link href={'signup'}>Create Account!</Link></span>
+          Already have an account?{' '}
+          <Link href="/login" className="text-gray-400 font-semibold">Log In</Link>
         </p>
-      </div>
+      </form>
     </div>
-    </>
   )
 }
 
-export default Login
+export default Signup
