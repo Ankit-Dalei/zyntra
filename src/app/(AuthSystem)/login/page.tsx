@@ -45,7 +45,7 @@ const Login = () => {
         />
 
         <p className="w-full max-w-md mb-4 px-4 py-2 text-white text-right">
-          <Link href="/reset">Forget Password?</Link>
+          <Link href="/passReset">Forget Password?</Link>
         </p>
 
         <button type="submit" className="w-full max-w-md bg-black hover:bg-gray-400 hover:text-black text-white py-2 rounded mb-4">

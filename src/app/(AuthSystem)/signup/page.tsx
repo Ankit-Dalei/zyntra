@@ -41,8 +41,7 @@ const Signup = () => {
 
       {/* Right Side - Signup Form */}
       <form onSubmit={handleSignup} className="w-full lg:w-1/2 flex flex-col justify-center items-center px-10">
-        <h2 className="text-2xl font-bold text-gray-100 mb-1">Kick start</h2>
-        <h3 className="text-xl text-gray-400 mb-1">Your</h3>
+        <h2 className="text-2xl font-bold text-gray-100 mb-1">Kick start Your</h2>
         <h3 className="text-xl text-gray-600 mb-8">Development Journey</h3>
 
         <div className="flex md:flex-row flex-col justify-center items-center gap-4 w-full max-w-md mb-4">
