@@ -3,33 +3,31 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 
 const Signup = () => {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [dob, setDob] = useState('')
+  const NewDate=new Date();
+  const [SignUpData,setSignUpData]=useState({
+    firstName:'',
+    lastName:'',
+    email:'',
+    password:'',
+    confirmPassword:'',
+    role:'',
+    date:NewDate.toLocaleDateString(),
+    time:NewDate.getHours()+'-'+NewDate.getMinutes()+'-'+NewDate.getSeconds(),
+    status:''
+  })
+
+  const setValues=(key: any,val: any)=>{
+    setSignUpData(prevData => ({
+    ...prevData,
+    [key]: val
+  }));
+  }
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault()
-
-    if (!firstName || !lastName || !email || !password || !confirmPassword) {
-      alert('Please fill in all fields')
-      return
-    }
-
-    if (password !== confirmPassword) {
-      alert('Passwords do not match')
-      return
-    }
-
-    if (!dob) {
-  alert('Please select your Date of Birth')
-  return
-}
-
-    // Proceed with signup logic (API call)
-    alert(`Signup successful!\nName: ${firstName} ${lastName}\nEmail: ${email}`)
+    const {firstName, lastName, email,password,confirmPassword}=SignUpData
+    console.log(SignUpData)
+    // implementation
   }
 
   return (
@@ -48,15 +46,17 @@ const Signup = () => {
           <input
             type="text"
             placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            value={SignUpData.firstName}
+            name={`firstName`}
+            onChange={(e) => setValues(e.target.name,e.target.value)}
             className="w-full md:w-1/2 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
           />
           <input
             type="text"
             placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            value={SignUpData.lastName}
+            name={`lastName`}
+            onChange={(e) => setValues(e.target.name,e.target.value)}
             className="w-full md:w-1/2 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
           />
         </div>
@@ -64,8 +64,9 @@ const Signup = () => {
         <input
           type="email"
           placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={SignUpData.email}
+          name={`email`}
+          onChange={(e) => setValues(e.target.name,e.target.value)}
           className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
         />
 
@@ -73,25 +74,28 @@ const Signup = () => {
           <input
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={SignUpData.password}
+            name={`password`}
+            onChange={(e) => setValues(e.target.name,e.target.value)}
             className="w-full md:w-1/2 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
           />
           <input
             type="password"
             placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            value={SignUpData.confirmPassword}
+            name={`confirmPassword`}
+            onChange={(e) => setValues(e.target.name,e.target.value)}
             className="w-full md:w-1/2 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
           />
         </div>
-        <input
+        {/* <input
           type="date"
           placeholder="Date of Birth"
-          value={dob}
-          onChange={(e) => setDob(e.target.value)}
+          value={SignUpData.dob}
+          name={`dob`}
+          onChange={(e) => setValues(e.target.name,e.target.value)}
           className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
-        />
+        /> */}
 
         <button type="submit" className="w-full max-w-md bg-black hover:bg-gray-400 hover:text-black text-white py-2 rounded mb-4">
           Sign up

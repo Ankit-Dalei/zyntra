@@ -27,8 +27,6 @@ const Reset = () => {
   const handleResetPassword = (e: React.FormEvent) => {
     e.preventDefault()
     if (password === confirmPassword && password.length >= 6) {
-      // Send reset password API here
-      alert('Password changed successfully')
       setStep(1)
       setEmail('')
       setOtp('')

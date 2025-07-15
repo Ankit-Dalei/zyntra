@@ -3,18 +3,29 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const NewDate=new Date();
+  const [LoginData,setLoginData]=useState({
+    email:'',
+    password:'',
+    date:NewDate.toLocaleDateString(),
+    time:NewDate.getHours()+'-'+NewDate.getMinutes()+'-'+NewDate.getSeconds(),
+    status:''
+  })
+
+  const setValues=(name:any,val:any)=>{
+    setLoginData(Data=>({
+      ...Data,
+      [name]:val
+    }))
+  }
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
-    // Validation or API call
-    if (!email || !password) {
-      alert('Please fill all fields')
-      return
-    }
-    // Replace with real login API
-    alert(`Login attempted with:\nEmail: ${email}\nPassword: ${password}`)
+    const {email,password}=LoginData;
+    console.log(LoginData)
+
+   //implementation
+   
   }
 
   return (
@@ -32,15 +43,17 @@ const Login = () => {
         <input
           type="email"
           placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={LoginData.email}
+          name={`email`}
+          onChange={(e) => setValues(e.target.name,e.target.value)}
           className="w-full max-w-md mb-4 px-4 py-2 border text-gray-100 border-gray-300 rounded bg-transparent"
         />
         <input
           type="password"
           placeholder="********"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={LoginData.password}
+          name={`password`}
+          onChange={(e) => setValues(e.target.name,e.target.value)}
           className="w-full max-w-md mb-1 px-4 text-gray-100 py-2 border border-gray-300 rounded bg-transparent"
         />
 
